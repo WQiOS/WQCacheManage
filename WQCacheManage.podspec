@@ -8,19 +8,13 @@
 
 Pod::Spec.new do |s|
 
-  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  These will help people to find your library, and whilst it
-  #  can feel like a chore to fill in it's definitely to your advantage. The
-  #  summary should be tweet-length, and the description more in depth.
-  #
-
 s.name         = "WQCacheManage"
 s.version      = "1.0.0"
 s.summary      = "A short description of WQCacheManage."
 
 s.description  = <<-DESC
-自己总结的私有Pods库，欢迎使用。
+                 自己总结的私有Pods库，欢迎使用。
+                 DESC
 
 s.homepage     = "https://github.com/WQiOS/WQCacheManage"
 
