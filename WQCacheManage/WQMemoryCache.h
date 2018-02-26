@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 //总大小
 @property (readonly) NSUInteger totalCost;
 
-
 #pragma mark - 限制
 
 // 个数限制 默认无限制
@@ -49,12 +48,11 @@ NS_ASSUME_NONNULL_BEGIN
 // 当app 进到后台删除内存,回调
 @property (nullable, copy) void(^didEnterBackgroundBlock)(WQMemoryCache *cache);
 
-//
+// 是否在主线程释放对象，默认 NO，有些对象（例如 UIView/CALayer）应该在主线程释放
 @property BOOL releaseOnMainThread;
 
-
+// 是否异步释放对象，默认 YES
 @property BOOL releaseAsynchronously;
-
 
 #pragma mark - 访问方法
 

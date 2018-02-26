@@ -13,34 +13,19 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WQDiskCache : NSObject
 
 #pragma mark - 属性
-
 @property (nullable, copy) NSString *name;
-
-
 @property (readonly) NSString *path;
-
-
-
 @property (readonly) NSUInteger inlineThreshold;
-
 @property (nullable, copy) NSData *(^customArchiveBlock)(id object);
-
 @property (nullable, copy) id (^customUnarchiveBlock)(NSData *data);
-
 @property (nullable, copy) NSString *(^customFileNameBlock)(NSString *key);
-
-
 
 #pragma mark - 限制
 @property NSUInteger countLimit;
-
 @property NSUInteger costLimit;
-
 @property NSTimeInterval ageLimit;
 @property NSUInteger freeDiskSpaceLimit;
-
 @property NSTimeInterval autoTrimInterval;
-
 @property BOOL errorLogsEnabled;
 
 #pragma mark -  初始化
@@ -49,14 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
-
 /**根据path 创建实例 默认20k*/
 - (nullable instancetype)initWithPath:(NSString *)path;
-
-
 - (nullable instancetype)initWithPath:(NSString *)path
                       inlineThreshold:(NSUInteger)threshold NS_DESIGNATED_INITIALIZER;
-
 
 #pragma mark - 方法
 // 判断内存和硬盘缓存 是否 包含键所对应的值
@@ -71,10 +52,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 通过key取值， 异步回调
 - (void)objectForKey:(NSString *)key withBlock:(void(^)(NSString *key, id<NSCoding> _Nullable object))block;
 
-//存储
+// 存储
 - (void)setObject:(nullable id<NSCoding>)object forKey:(NSString *)key;
 
-//存储， 异步回调
+// 存储， 异步回调
 - (void)setObject:(nullable id<NSCoding>)object forKey:(NSString *)key withBlock:(void(^)(void))block;
 
 // 删除
@@ -89,10 +70,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 清空  异步回调
 - (void)removeAllObjectsWithBlock:(void(^)(void))block;
 
-
+// 清空  异步回调
 - (void)removeAllObjectsWithProgressBlock:(nullable void(^)(int removedCount, int totalCount))progress
                                  endBlock:(nullable void(^)(BOOL error))end;
-
 
 // 总个数
 - (NSInteger)totalCount;
@@ -106,19 +86,13 @@ NS_ASSUME_NONNULL_BEGIN
 // 总大小  回调
 - (void)totalCostWithBlock:(void(^)(NSInteger totalCost))block;
 
-
 #pragma mark - Trim
 
 - (void)trimToCount:(NSUInteger)count;
-
 - (void)trimToCount:(NSUInteger)count withBlock:(void(^)(void))block;
-
 - (void)trimToCost:(NSUInteger)cost;
-
 - (void)trimToCost:(NSUInteger)cost withBlock:(void(^)(void))block;
-
 - (void)trimToAge:(NSTimeInterval)age;
-
 - (void)trimToAge:(NSTimeInterval)age withBlock:(void(^)(void))block;
 
 

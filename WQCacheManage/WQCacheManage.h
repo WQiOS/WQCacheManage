@@ -12,7 +12,7 @@
 @class WQDiskCache;
 @class WQKVStorage;
 
-//空值判断
+// 空值判断
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WQCacheManage : NSObject
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**根据path 创建实例*/
 + (nullable instancetype)cacheWithPath:(NSString *)path;
 
-//禁止通过下面两个方式实例化对象
+// 禁止通过下面两个方式实例化对象
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
@@ -72,9 +72,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 清空
 - (void)removeAllObjects;
 
-//清空 ， 异步回调
+// 清空 ， 异步回调
 - (void)removeAllObjectsWithBlock:(void(^)(void))block;
-
 - (void)removeAllObjectsWithProgressBlock:(nullable void(^)(int removedCount, int totalCount))progress
                                  endBlock:(nullable void(^)(BOOL error))end;
 

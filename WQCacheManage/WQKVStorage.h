@@ -23,15 +23,10 @@ NS_ASSUME_NONNULL_BEGIN   //空值判断
 
 
 typedef NS_ENUM(NSUInteger, WQKVStorageType) {
-    
     WQKVStorageTypeFile = 0,
-    
     WQKVStorageTypeSQLite = 1,
-    
     WQKVStorageTypeMixed = 2,
 };
-
-
 
 @interface WQKVStorage : NSObject
 
