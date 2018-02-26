@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
 + (instancetype)new UNAVAILABLE_ATTRIBUTE;
 
-/**根据path 创建实例 默认20k*/
+/**根据path 创建实例 单位对象存储默认大小20k，如果对象的数据大小(以字节为单位)大于这个值，那么对象将会存储为file文件，否则对象将存储在sqlite中。*/
 - (nullable instancetype)initWithPath:(NSString *)path;
 - (nullable instancetype)initWithPath:(NSString *)path
                       inlineThreshold:(NSUInteger)threshold NS_DESIGNATED_INITIALIZER;
