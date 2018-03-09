@@ -2,11 +2,8 @@
 Pod::Spec.new do |s|
 
 s.name         = "WQCacheManage"
-s.version      = "1.1.0"
+s.version      = "1.1.1"
 s.summary      = "Pod库"
-s.description  = <<-DESC
-                 自己总结的私有Pods库，欢迎使用。
-                 DESC
 s.homepage     = "https://github.com/WQiOS/WQCacheManage"
 s.license      = "MIT"
 s.author       = { "王强" => "1570375769@qq.com" }
